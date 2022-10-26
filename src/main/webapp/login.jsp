@@ -5,16 +5,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-		<form action="Login">
+	
+	   <div class="container">
+		<div class="container-header">
+			<h3>Sign in to UnAuthorised Food Distribution  System</h3>
+			<h3>अनधिकृत खाद्यान्न वितरण  प्रणाली में साइन इन करे</h3>
+		</div>
+
+
+
+		<div class="login-container">
+			<form action="Login">
 			
-			Enter username : <input type="text" name="uname"> <br>
-			Enter Password : <input type="password" name="pass"> <br>
-			<input type="submit" value="login"> <br>
+			<label for="name">User Name</label>  <br>
+			<input class="input1" type="text" name="uname" id="name"> <br>
+			<label for="passw">Password</label> <br>
+			<input class="input1" type="password" name="pass" id="passw">  <br>
+			<input class="submitbtn" type="submit" value="login"> <br>
 		
 		
 		</form>
+		</div>
+		
+	   </div>
+		
 
 </body>
 </html>

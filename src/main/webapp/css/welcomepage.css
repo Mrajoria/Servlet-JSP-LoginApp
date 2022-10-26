@@ -1,0 +1,34 @@
+.main-container{
+	width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    justify-content: center;
+    align-items: center;
+    background: coral;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header-div {
+	background-color:#525D76;
+	margin-top:1%;
+}
+
+.nav-bar{
+	
+	display:flex;
+	flex-direction:row;
+	width:40%;
+	border: 1px solid green;
+	border-radius: 6px;
+	justify-content:center;
+	background-color:darkgrey;
+}
+
+.nav-bar > *{
+	margin:1%;
+}
+
+

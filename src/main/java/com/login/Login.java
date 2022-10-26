@@ -16,11 +16,12 @@ public class Login extends HttpServlet {
 	
 	 /* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uname = request.getParameter("uname");
 		String password = request.getParameter("pass");
 		
-		if (uname.equals("pragya420") && password.equals("passpass"))
+		if ((uname.equals("pragya720")  || uname.equals("admin") ) && (password.equals("passpass") || password.equals("shangri-la")))
 		{
 			HttpSession session = request.getSession();
 			session.setAttribute("username",uname);

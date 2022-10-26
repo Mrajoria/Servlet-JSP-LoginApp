@@ -1,0 +1,34 @@
+ 
+ .container{
+  display: flex;
+  flex-direction: column;
+
+  width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+  
+ }
+
+ .container-header{
+  text-align: center;
+ }
+
+  .login-container{
+    background-color: pink;
+    border: 1px solid green;
+    border-radius: 6px;
+    padding: 8%;
+}
+
+.submitbtn{
+ width: 82%;
+ background-color: #298e47;
+ border-radius: 3%;
+ margin-top: 3%;
+
+}
+
+.input1{
+  width: 80%;
+  border-radius: 3%;
+}
