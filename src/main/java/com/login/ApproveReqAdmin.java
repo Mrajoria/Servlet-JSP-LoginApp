@@ -20,7 +20,7 @@ import com.model.UserItem;
  * Servlet implementation class Approvereq
  */
 @WebServlet("/approvereq")
-public class ApproveReq extends HttpServlet {
+public class ApproveReqAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     Dao dao;  
     UserItem uitem;

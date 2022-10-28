@@ -19,7 +19,7 @@ import com.model.UserItem;
 
 
 @WebServlet("/discardreq")
-public class DiscardReq extends HttpServlet {
+public class DiscardReqAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Dao dao;
 

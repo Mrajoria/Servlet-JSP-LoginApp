@@ -26,7 +26,7 @@
 		<h3 style="text-align: center; margin-top: 2%">Your requst is
 			sent to Database Admin.</h3>
 		<div style="background-color: darkgrey; text-align: center">
-			<h5>Pending Data is shown below</h5>
+			<h5>Pending Add Requests shown below</h5>
 		</div>
 
 		<table class="table table-bordered">
@@ -49,7 +49,7 @@
 							<td><c:out value="${item.quantity}" /></td>
 							<td><c:out value="${item.location}" /></td>
 							<td><c:out value="${item.status}" /></td>
-							<td><a href="UserDelete?id=<c:out value='${item.name}' />">Delete</a></td>
+							<td><a href="">Delete</a></td>
 						</tr>
 					</c:if>
 				</c:forEach>
@@ -57,6 +57,43 @@
 			</tbody>
 
 		</table>
+		
+		<div style="background-color: orange; text-align: center">
+			<h5>Delete Requests from User are shown below</h5>
+		</div>
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Quantity</th>
+					<th>Location</th>
+					<th>Status</th>
+					<th>User Action</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<c:forEach var="item" items="${usertableitems}">
+
+					<c:if test="${item.actioncode=='userdelete'}">
+						<tr>
+							<td><c:out value="${item.name}" /></td>
+							<td><c:out value="${item.quantity}" /></td>
+							<td><c:out value="${item.location}" /></td>
+							<td><c:out value="${item.status}" /></td>
+							<td><a href="">Delete</a></td>
+						</tr>
+					</c:if>
+				</c:forEach>
+
+			</tbody>
+
+		</table>
+		
+		
+		
+		
 		
 		<div style="background-color: darkgrey; text-align: center">
 			<h5>Invalidated Data by Admin is shown below</h5>
@@ -80,7 +117,7 @@
 							<td><c:out value="${item.quantity}" /></td>
 							<td><c:out value="${item.location}" /></td>
 							<td><c:out value="${item.status}" /></td>
-							<td><a href="UserDelete?id=<c:out value='${item.name}' />">Delete</a></td>
+							<td><a href="">Delete</a></td>
 						</tr>
 					</c:if>
 				</c:forEach>
@@ -168,6 +205,49 @@
 			<button onclick="window.location='approvereq?id=<c:out value='${varA}' />'" >Merge All</button>
 			<button onclick="window.location='discardreq?id=<c:out value='${varA}' />'" >Discard All</button>
 		</div>
+		
+		<br>
+		<br>
+		
+		<div style="background-color: orange; text-align: center">
+			<h5>Delete Requests are shown below</h5>
+		</div>
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Quantity</th>
+					<th>Location</th>
+					<th>Status</th>
+					<th>Admin Action</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<c:forEach var="item" items="${usertableitems}">
+					<c:if test="${item.actioncode=='userdelete'}">
+						<tr>
+							<td><c:out value="${item.name}" /></td>
+							<td><c:out value="${item.quantity}" /></td>
+							<td><c:out value="${item.location}" /></td>
+							<td><c:out value="${item.status}" /></td>
+							<td><a href="UserDeleteToAdmin?uitemname=${item.name}">Delete Data</a> </td>
+						</tr>
+
+					</c:if>
+				</c:forEach>
+
+			</tbody>
+
+		</table>
+		
+		<div
+			style="display: flex; flex-direction: row; justify-content: center">
+			
+			<button onclick="window.location='UserDeleteToAdmin?&uitemname=all'" >Delete All</button>
+		</div>
+		
 
 	</c:if>
 

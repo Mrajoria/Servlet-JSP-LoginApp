@@ -18,6 +18,7 @@ public class Dao {
 
 	private static final String INSERT_ITEMS_SQL = "INSERT INTO items" + "  (name, quantity, location, status) VALUES "
 			+ " (?, ?, ?,?);";
+	private static final String SELECT_ITEMS_BY_CLM_SQL = "select * from items WHERE name = ?;";
 	private static final String SELECT_ALL_ITEMS = "select * from items;";
 	private static final String DELETE_ITEMS_SQL = "delete from items where name = ?;";
 	private static final String UPDATE_ITEMS_SQL = "update items set name = ?,quantity= ?, location =?, status =? where name = ?;";
@@ -97,11 +98,11 @@ public class Dao {
 		return items;
 	}
 
-	public boolean deleteItem(int id) throws SQLException {
+	public boolean deleteItem(String name) throws SQLException {
 		boolean rowDeleted;
 		try (Connection connection = getConnection();
 				PreparedStatement statement = connection.prepareStatement(DELETE_ITEMS_SQL);) {
-			statement.setInt(1, id);
+			statement.setString(1, name);
 			rowDeleted = statement.executeUpdate() > 0;
 		}
 		return rowDeleted;
